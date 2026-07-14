@@ -366,7 +366,7 @@ footer a:hover { text-decoration: underline; }
   </div>
   <div class="intro-card">
     <h3>What this isn't</h3>
-    <p>Not a token verifier (use jwt-inspector for that). Not a security audit tool — it catches common mistakes, not novel attacks.</p>
+    <p>Not a token verifier (use jwt-inspector for that). Not a security audit tool, it catches common mistakes, not novel attacks.</p>
   </div>
 </div>
 
@@ -452,7 +452,7 @@ function decode() {
   const componentsBody = $("components-table").querySelector("tbody");
   componentsBody.innerHTML = "";
   const components = [
-    ["Scheme", url.protocol.replace(":", ""), url.protocol === "https:" ? "Secure" : "INSECURE — OAuth requires HTTPS in production."],
+    ["Scheme", url.protocol.replace(":", ""), url.protocol === "https:" ? "Secure" : "INSECURE, OAuth requires HTTPS in production."],
     ["Host", url.host, ""],
     ["Path", url.pathname, ""],
     ["Query string", url.search ? url.search.slice(1) : "(none)", url.search ? `${queryParams.size} parameter(s)` : ""],
@@ -514,7 +514,7 @@ function detectFlow(url, query, fragment) {
   if (path.includes("/userinfo")) {
     return { label: "OIDC UserInfo endpoint", direction: "Client → authorization server (with access token)" };
   }
-  return { label: "Unrecognized — possibly not OAuth, or custom flow", direction: "Unknown" };
+  return { label: "Unrecognized, possibly not OAuth, or custom flow", direction: "Unknown" };
 }
 
 function audit(url, query, fragment, flow) {
@@ -525,7 +525,7 @@ function audit(url, query, fragment, flow) {
     out.push({ level: "ok", msg: "HTTPS scheme" });
   } else if (url.protocol === "http:") {
     if (url.hostname === "localhost" || url.hostname === "127.0.0.1") {
-      out.push({ level: "warn", msg: "HTTP on localhost — okay for local dev, but production must use HTTPS" });
+      out.push({ level: "warn", msg: "HTTP on localhost, okay for local dev, but production must use HTTPS" });
     } else {
       out.push({ level: "err", msg: "INSECURE: OAuth must use HTTPS in production" });
     }
@@ -562,7 +562,7 @@ function audit(url, query, fragment, flow) {
     if (query.has("code_challenge")) {
       const method = query.get("code_challenge_method") || "plain";
       if (method === "S256") {
-        out.push({ level: "ok", msg: "PKCE with S256 — recommended" });
+        out.push({ level: "ok", msg: "PKCE with S256, recommended" });
       } else {
         out.push({ level: "err", msg: `PKCE code_challenge_method is '${method}'. Use S256, never 'plain' (which provides no protection).` });
       }
@@ -614,7 +614,7 @@ function audit(url, query, fragment, flow) {
   if (query.has("error") || fragment.has("error")) {
     const err = query.get("error") || fragment.get("error");
     const desc = query.get("error_description") || fragment.get("error_description") || "";
-    out.push({ level: "err", msg: `Error response: ${err}${desc ? " — " + desc : ""}` });
+    out.push({ level: "err", msg: `Error response: ${err}${desc ? ", " + desc : ""}` });
   }
 
   return out;
