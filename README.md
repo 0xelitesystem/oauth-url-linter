@@ -73,6 +73,10 @@ The audit logic is in `index.html`. Each check is a few lines, easy to add.
 
 There is no build. Single HTML file.
 
+## More
+
+Part of a catalog of single-file browser tools and plain-language references, all MIT licensed and dependency-free: [0xelitesystem.github.io](https://0xelitesystem.github.io/). Built by [elitesystem.ai](https://elitesystem.ai).
+
 ## License
 
 MIT.
