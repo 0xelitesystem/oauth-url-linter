@@ -501,25 +501,25 @@ function detectFlow(url, query, fragment) {
   const has = (k) => query.has(k) || fragment.has(k);
 
   if (has("error")) {
-    return { label: "Error response", direction: "Authorization server → client" };
+    return { label: "Error response", direction: "Authorization server -> client" };
   }
   if (fragment.has("access_token") || fragment.has("id_token")) {
-    return { label: "Implicit / hybrid callback (token in fragment)", direction: "Authorization server → client (browser callback)" };
+    return { label: "Implicit / hybrid callback (token in fragment)", direction: "Authorization server -> client (browser callback)" };
   }
   if (query.has("code")) {
-    return { label: "Authorization code callback", direction: "Authorization server → client (browser callback)" };
+    return { label: "Authorization code callback", direction: "Authorization server -> client (browser callback)" };
   }
   if (path.includes("authorize") || query.has("response_type")) {
-    return { label: "Authorization request", direction: "Client → authorization server (user is redirected here)" };
+    return { label: "Authorization request", direction: "Client -> authorization server (user is redirected here)" };
   }
   if (path.includes("token")) {
-    return { label: "Token endpoint URL", direction: "Client → authorization server (back-channel POST)" };
+    return { label: "Token endpoint URL", direction: "Client -> authorization server (back-channel POST)" };
   }
   if (path.includes("/.well-known/openid-configuration") || path.includes("openid-configuration")) {
     return { label: "OIDC discovery document URL", direction: "Discovery (no params)" };
   }
   if (path.includes("/userinfo")) {
-    return { label: "OIDC UserInfo endpoint", direction: "Client → authorization server (with access token)" };
+    return { label: "OIDC UserInfo endpoint", direction: "Client -> authorization server (with access token)" };
   }
   return { label: "Unrecognized, possibly not OAuth, or custom flow", direction: "Unknown" };
 }
