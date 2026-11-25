@@ -45,7 +45,7 @@ That said: **don't paste production callback URLs containing real authorization 
 
 ## What this is NOT
 
-- Not a JWT decoder. If a parameter contains a JWT (e.g. `id_token`), use [jwt-inspector](https://github.com/0xelitesystem/jwt-inspector).
+- Not a JWT decoder. If a parameter contains a JWT (e.g. `id_token`), use [jwt-verify-in-browser](https://github.com/0xelitesystem/jwt-verify-in-browser).
 - Not a token verifier. Doesn't check signatures.
 - Not a security scanner. Catches common OAuth mistakes, not novel attacks against specific providers.
 - Not a network tester. Doesn't make any requests; only parses what you paste.
@@ -83,6 +83,6 @@ MIT.
 
 ## Related
 
-- [jwt-inspector](https://github.com/0xelitesystem/jwt-inspector), decode JWTs found in OAuth responses
+- [jwt-verify-in-browser](https://github.com/0xelitesystem/jwt-verify-in-browser), decode JWTs found in OAuth responses
 - [multi-provider-webhook-verifier](https://github.com/0xelitesystem/multi-provider-webhook-verifier), verify webhook signatures
 - [byok-security-checklist](https://github.com/0xelitesystem/byok-security-checklist), security checklist for BYOK products
