@@ -84,5 +84,5 @@ MIT.
 ## Related
 
 - [jwt-inspector](https://github.com/0xelitesystem/jwt-inspector), decode JWTs found in OAuth responses
-- [webhook-signature-verifier](https://github.com/0xelitesystem/webhook-signature-verifier), verify webhook signatures
+- [multi-provider-webhook-verifier](https://github.com/0xelitesystem/multi-provider-webhook-verifier), verify webhook signatures
 - [byok-security-checklist](https://github.com/0xelitesystem/byok-security-checklist), security checklist for BYOK products
