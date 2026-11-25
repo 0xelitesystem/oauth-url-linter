@@ -1,8 +1,8 @@
-# OAuth Flow Debugger
+# OAuth URL Linter
 
 Paste an OAuth URL, see what's in it, and get warnings about common mistakes. All decoding happens in your browser.
 
-**Live demo:** https://0xelitesystem.github.io/oauth-flow-debugger/
+**Live demo:** https://0xelitesystem.github.io/oauth-url-linter/
 
 ## Use
 
@@ -53,8 +53,8 @@ That said: **don't paste production callback URLs containing real authorization 
 ## Run locally
 
 ```bash
-git clone https://github.com/0xelitesystem/oauth-flow-debugger
-cd oauth-flow-debugger
+git clone https://github.com/0xelitesystem/oauth-url-linter
+cd oauth-url-linter
 # Open index.html
 ```
 
